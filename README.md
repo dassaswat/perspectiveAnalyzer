@@ -42,8 +42,12 @@ from perspectiveAnalyzer import Perspective
 
 # initiate the object
 api_key = "Your API Key"
-textAnalyzer = Perspective(api_key, developer_name, lang, **kwargs) # Here we pass in the api_key, developerName (** Not Mandatory **), lang which is a list(defaults to just "en" ** Not Mandatory as well **) and finally we pass in the attributes with their threshold values.
+textAnalyzer = Perspective(api_key, "sassy", lang=["en","es"], INSULT = 0.75, TOXICITY = 0.75,SPAM= 0.75,)
 
+"""
+  Here we pass in the api_key, developerName ( ** Not Mandatory ** ), lang which is a list( defaults to just "en"
+  ** Not Mandatory as well ** ) and finally we pass in the attributes with their threshold values.
+"""
 res = textAnalyzer.analyzeText("Some text")
 ```
 
