@@ -36,14 +36,18 @@ getTextReport() Method returns an object containing probability scores for all t
 
 ```python
 # install the python Module
+
 pip3 install perspectiveAnalyzer
+
 ```
 
 ```python
 # import the module
+
 from perspectiveAnalyzer import Perspective
 
 # initiate the object
+
 api_key = "Your API Key"
 textAnalyzer = Perspective(api_key, "sassy", lang=["en","es"], INSULT = 0.75, TOXICITY = 0.75,SPAM= 0.75,)
 
@@ -51,6 +55,7 @@ textAnalyzer = Perspective(api_key, "sassy", lang=["en","es"], INSULT = 0.75, TO
   Here we pass in the api_key, developerName ( ** Not Mandatory ** ), lang which is a list( defaults to just "en"
   ** Not Mandatory as well ** ) and finally we pass in the attributes with their threshold values.
 """
+
 res = textAnalyzer.analyzeText("Some text") # Return a boolean object for the provided attribute
 res = textAnalyzer.getTextReport("Some text") # Returns an object containing the probability scores for the provided attributes
 ```
@@ -62,6 +67,7 @@ The function that is currently available with this module is:
 ```python
 
 # endpoints
+
 analyzeText("Some text")
 getTextReport("Some text")
 
@@ -70,11 +76,11 @@ getTextReport("Some text")
 ## Sample Response
 
 ```python
-# For analyzeText
+# From analyzeText
 
 {'TOXICITY': True, 'INSULT': True}
 
-# For getTextReport
+# From getTextReport
 
 {
   "attributeScores": {
