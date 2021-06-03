@@ -11,30 +11,32 @@ You can install released versions of perspectiveAnalyzer from the Python Package
 **Stable Release:** `pip install perspectiveAnalyzer`<br>
 **Working Version:** `pip install git+https://github.com/dassaswat/perspectiveAnalyzer.git`
 
-```
-  Intialize the class with your API_KEY, Required Languages and Required Attributes and their respective thresholds in **kwargs
-  You can also setup the Developer Name.
+Intialize the class with your API_KEY, Required Languages and Required Attributes and their respective thresholds in \*\*kwargs
+You can also setup the Developer Name.
 
-  ** Accepted attributes **
-    attributes = ["TOXICITY", "SEVERE_TOXICITY", "IDENTITY_ATTACK", "INSULT",
-                  "PROFANITY", "THREAT", "SEXUALLY_EXPLICIT", "FLIRTATION", "SPAM",
-                  "ATTACK_ON_AUTHOR", "ATTACK_ON_COMMENTER", "INCOHERENT",
-                  "INFLAMMATORY", "OBSCENE", "SPAM", "UNSUBSTANTIAL"]
+** Accepted attributes **
+attributes = ["TOXICITY", "SEVERE_TOXICITY", "IDENTITY_ATTACK", "INSULT",
+"PROFANITY", "THREAT", "SEXUALLY_EXPLICIT", "FLIRTATION", "SPAM",
+"ATTACK_ON_AUTHOR", "ATTACK_ON_COMMENTER", "INCOHERENT",
+"INFLAMMATORY", "OBSCENE", "SPAM", "UNSUBSTANTIAL"]
 
+** Accepted Languages **
+lang = ["en", "fr", "es", "de", "it", "pt", "ru"]
 
-  ** Accepted Languages **
-  lang = ["en", "fr", "es", "de", "it", "pt", "ru"]
+For more details on the API refer to the Perspective API Documentaion
+https://developers.perspectiveapi.com/s/about-the-api-attributes-and-languages
 
-  For more details on the API refer to the Perspective API Documentaion
-  https://developers.perspectiveapi.com/s/about-the-api-attributes-and-languages
+** Available Methods **
 
-  ** Available Methods **
-
-  analyzeText() Method return an object containing attributes that are booleans (either True or False) .If the returned summary score falls beyond the threshold specified it return True else False.
-
-```
+analyzeText() Method return an object containing attributes that are booleans (either True or False) .If the returned summary score falls beyond the threshold specified it return True else False.
+getTextReport() Method returns an object containing probability scores for all the attributes that was passed during the initialization.
 
 ## Example Usage
+
+```python
+# install the python Module
+pip3 install perspectiveAnalyzer
+```
 
 ```python
 # import the module
@@ -48,7 +50,8 @@ textAnalyzer = Perspective(api_key, "sassy", lang=["en","es"], INSULT = 0.75, TO
   Here we pass in the api_key, developerName ( ** Not Mandatory ** ), lang which is a list( defaults to just "en"
   ** Not Mandatory as well ** ) and finally we pass in the attributes with their threshold values.
 """
-res = textAnalyzer.analyzeText("Some text")
+res = textAnalyzer.analyzeText("Some text") # Return a boolean object for the provided attribute
+res = textAnalyzer.getTextReport("Some text") # Returns an object containing the probability scores for the provided attributes
 ```
 
 ## Functions available
@@ -56,8 +59,66 @@ res = textAnalyzer.analyzeText("Some text")
 The function that is currently available with this module is:
 
 ```python
+
 # endpoints
-analyzeText("sometext")
+analyzeText("Some text")
+getTextReport("Some text")
+
+```
+
+## Sample Response
+
+```python
+# For analyzeText
+
+{'TOXICITY': True, 'INSULT': True}
+
+# For getTextReport
+
+{
+  "attributeScores": {
+    "TOXICITY": {
+      "spanScores": [
+        {
+          "begin": 0,
+          "end": 11,
+          "score": {
+            "value": 0.04457423,
+            "type": "PROBABILITY"
+          }
+        }
+      ],
+      "summaryScore": {
+        "value": 0.04457423,
+        "type": "PROBABILITY"
+      }
+    },
+    "INSULT": {
+      "spanScores": [
+        {
+          "begin": 0,
+          "end": 11,
+          "score": {
+            "value": 0.01924272,
+            "type": "PROBABILITY"
+          }
+        }
+      ],
+      "summaryScore": {
+        "value": 0.01924272,
+        "type": "PROBABILITY"
+      }
+    }
+  },
+  "languages": [
+    "en"
+  ],
+  "detectedLanguages": [
+    "en",
+    "fil"
+  ]
+}
+
 ```
 
 ## Important Links
