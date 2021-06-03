@@ -1,4 +1,4 @@
-# PERSPECTIVEANALYZER 0.0.1
+# PERSPECTIVEANALYZER 1.0.1
 
 PERSPECTIVEANALYZER, is a python wrapper for the
 [Google Perspective API] (https://www.perspectiveapi.com/).
