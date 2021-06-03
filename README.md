@@ -29,6 +29,7 @@ https://developers.perspectiveapi.com/s/about-the-api-attributes-and-languages
 ** Available Methods **
 
 analyzeText() Method return an object containing attributes that are booleans (either True or False) .If the returned summary score falls beyond the threshold specified it return True else False.
+
 getTextReport() Method returns an object containing probability scores for all the attributes that was passed during the initialization.
 
 ## Example Usage
