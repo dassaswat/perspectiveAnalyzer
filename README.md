@@ -23,7 +23,7 @@ attributes = ["TOXICITY", "SEVERE_TOXICITY", "IDENTITY_ATTACK", "INSULT",
 ** Accepted Languages **
 lang = ["en", "fr", "es", "de", "it", "pt", "ru"]
 
-For more details on the API refer to the Perspective API Documentaion
+For more details on the API refer to the Perspective API Documentation
 https://developers.perspectiveapi.com/s/about-the-api-attributes-and-languages
 
 ** Available Methods **
