@@ -1,10 +1,13 @@
-# PERSPECTIVEANALYZER 1.0.1
+# PERSPECTIVEANALYZER 1.0.2
 
 PERSPECTIVEANALYZER, is a python wrapper for the
 [Google Perspective API] (https://www.perspectiveapi.com/).
-PyPI: https://pypi.org/project/perspectiveAnalyzer/0.0.1/
+PyPI: https://pypi.org/project/perspectiveAnalyzer/1.0.2/
+Github: https://github.com/dassaswat/perspectiveAnalyzer
 
 ## Installation
+
+```python
 
 You can install released versions of perspectiveAnalyzer from the Python Package Index with pip or a similar tool:
 
@@ -31,6 +34,8 @@ https://developers.perspectiveapi.com/s/about-the-api-attributes-and-languages
 analyzeText() Method return an object containing attributes that are booleans (either True or False) .If the returned summary score falls beyond the threshold specified it return True else False.
 
 getTextReport() Method returns an object containing probability scores for all the attributes that was passed during the initialization.
+
+```
 
 ## Example Usage
 

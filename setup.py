@@ -7,7 +7,7 @@ here = os.path.abspath(os.path.dirname(__file__))
 with codecs.open(os.path.join(here, "README.md"), encoding="utf-8") as fh:
     long_description = "\n" + fh.read()
 
-VERSION = '1.0.1'
+VERSION = '1.0.2'
 DESCRIPTION = 'A simple python wrapper for perspective API'
 LONG_DESCRIPTION = 'Use the simplicity of the perspectiveAnalyzer to make powerful api calls to analyze texts toxicity. This package will help you build better software in lesser time!'
 
@@ -18,6 +18,7 @@ setup(
     author="Saswat Das",
     author_email="saswatd19@gmail.com",
     description=DESCRIPTION,
+    url="https://github.com/dassaswat/perspectiveAnalyzer",
     long_description_content_type="text/markdown",
     long_description=long_description,
     packages=find_packages(),
