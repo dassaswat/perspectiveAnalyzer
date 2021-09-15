@@ -14,26 +14,27 @@ Github: https://github.com/dassaswat/perspectiveAnalyzer
 # Stable Release: `pip install perspectiveAnalyzer`<br>
 # Working Version: `pip install git+https://github.com/dassaswat/perspectiveAnalyzer.git`
 
-# Intialize the class with your API_KEY, Required Languages and Required Attributes and their respective thresholds in \*\*kwargs
-You can also setup the Developer Name.
+# Intialize the class with your API_KEY, required languages and required attributes with their respective thresholds in \*\*kwargs
+# You can also setup the Developer Name.
 
-** Accepted attributes **
-attributes = ["TOXICITY", "SEVERE_TOXICITY", "IDENTITY_ATTACK", "INSULT",
-"PROFANITY", "THREAT", "SEXUALLY_EXPLICIT", "FLIRTATION", "SPAM",
-"ATTACK_ON_AUTHOR", "ATTACK_ON_COMMENTER", "INCOHERENT",
-"INFLAMMATORY", "OBSCENE", "SPAM", "UNSUBSTANTIAL"]
+# Accepted attributes 
+# attributes = ["TOXICITY", "SEVERE_TOXICITY", "IDENTITY_ATTACK", "INSULT",
+# "PROFANITY", "THREAT", "SEXUALLY_EXPLICIT", "FLIRTATION", "SPAM",
+# "ATTACK_ON_AUTHOR", "ATTACK_ON_COMMENTER", "INCOHERENT",
+# "INFLAMMATORY", "OBSCENE", "SPAM", "UNSUBSTANTIAL"]
 
-** Accepted Languages **
-lang = ["en", "fr", "es", "de", "it", "pt", "ru"]
+# Accepted Languages 
+# lang = ["en", "fr", "es", "de", "it", "pt", "ru"]
 
-For more details on the API refer to the Perspective API Documentation
-https://developers.perspectiveapi.com/s/about-the-api-attributes-and-languages
+# For more details on the API refer to the Perspective API Documentation
+# https://developers.perspectiveapi.com/s/about-the-api-attributes-and-languages
+```
+## Available Methods 
 
-** Available Methods **
+```python
+analyzeText("Some Text") # Method returns an object containing attributes that are booleans (either True or False) .If the returned summary score falls beyond the threshold specified it return True else False.
 
-analyzeText() Method returns an object containing attributes that are booleans (either True or False) .If the returned summary score falls beyond the threshold specified it return True else False.
-
-getTextReport() Method returns an object containing probability scores for all the attributes that was passed during the initialization.
+getTextReport("Some Text") # Method returns an object containing probability scores for all the attributes that was passed during the initialization.
 
 ```
 
@@ -65,18 +66,6 @@ res = textAnalyzer.analyzeText("Some text") # Return a boolean object for the pr
 res = textAnalyzer.getTextReport("Some text") # Returns an object containing the probability scores for the provided attributes
 ```
 
-## Methods available
-
-The function that is currently available with this module is:
-
-```python
-
-# endpoints
-
-analyzeText("Some text")
-getTextReport("Some text")
-
-```
 
 ## Sample Response
 
