@@ -9,12 +9,12 @@ Github: https://github.com/dassaswat/perspectiveAnalyzer
 
 ```python
 
-You can install released versions of perspectiveAnalyzer from the Python Package Index with pip or a similar tool:
+# You can install released versions of perspectiveAnalyzer from the Python Package Index with pip or a similar tool:
 
-**Stable Release:** `pip install perspectiveAnalyzer`<br>
-**Working Version:** `pip install git+https://github.com/dassaswat/perspectiveAnalyzer.git`
+# Stable Release: `pip install perspectiveAnalyzer`<br>
+# Working Version: `pip install git+https://github.com/dassaswat/perspectiveAnalyzer.git`
 
-Intialize the class with your API_KEY, Required Languages and Required Attributes and their respective thresholds in \*\*kwargs
+# Intialize the class with your API_KEY, Required Languages and Required Attributes and their respective thresholds in \*\*kwargs
 You can also setup the Developer Name.
 
 ** Accepted attributes **
